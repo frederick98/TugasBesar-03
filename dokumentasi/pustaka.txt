@@ -1,0 +1,11 @@
+https://medium.com/@prakash_pun/retrofit-a-simple-android-tutorial-48437e4e5a23
+
+https://github.com/birajpatel/GridListViewAdapters
+
+https://github.com/codepath/android_guides/wiki/Consuming-APIs-with-Retrofit
+
+https://github.com/codepath/android_guides/wiki/Must-Have-libraries
+
+https://www.mangaeden.com/api/list/0/?p=10&l=2
+
+https://github.com/MagicMicky/FreemiumLibrary/wiki/Import-the-library-in-Android-Studio
