@@ -22,9 +22,9 @@ import com.example.tugasbesar_03.ui.main.SectionsPagerAdapter;
 public class MainActivity extends AppCompatActivity {
     GridView gridView;
 
-    String[] numWord = {"1","2"};
+    String[] numWord = {"1","2","3","4","5", "6","7","8","9","10"};
 
-    int[] numberImage ={R.drawable.IMG_0653,R.drawable.IMG_0653};
+    int[] numberImage = {1,2,3,4,5,6,7,8,9,10};
 
 
     @Override
@@ -32,18 +32,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
+
 
         gridView = findViewById(R.id.grid_view);
 
-        MainAdapter adapter = new MainAdapter(MainActivity.this)
+        MainAdapter adapter = new MainAdapter(MainActivity.this,numWord,numberImage);
+        gridView.setAdapter(adapter);
 
-        gridView.setOnClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(),"You Clicked"+numWord[+position],
                         Toast.LENGTH_SHORT).show();
             }
