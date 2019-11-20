@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.nv95.openmanga.feature.read.reader.StandardMangaReader
+        android:id="@+id/reader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <org.nv95.openmanga.feature.read.custom.ReaderMenu
+        android:id="@+id/menuPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/imageView_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/menu"
+        android:minHeight="?actionBarSize"
+        android:minWidth="?actionBarSize"
+        android:scaleType="center" />
+
+    <FrameLayout
+        android:id="@+id/overscrollFrame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_dark"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textAllCaps="true"
+            android:padding="12dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+        <ImageView
+            android:id="@+id/imageView_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_dark"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</merge>

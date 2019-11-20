@@ -1,0 +1,148 @@
+<resources>
+
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorTranslucent">#d2ffffff</item>
+        <item name="toolbarThemeOverlay">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+    </style>
+
+    <style name="AppThemeDark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="colorTranslucent">#d2414141</item>
+        <item name="toolbarThemeOverlay">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+    </style>
+
+    <style name="AppThemeBlack" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="colorTranslucent">#d2000000</item>
+        <item name="toolbarThemeOverlay">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+    </style>
+
+    <style name="AppTheme.Default">
+        <item name="colorPrimary">#01579b</item>
+        <item name="colorPrimaryDark">#002f6c</item>
+        <item name="colorAccent">#e53935</item>
+    </style>
+
+    <style name="AppTheme.Grey">
+        <item name="colorPrimary">#546e7a</item>
+        <item name="colorPrimaryDark">#29434e</item>
+        <item name="colorAccent">#e64a19</item>
+    </style>
+
+    <style name="AppTheme.Blue">
+        <item name="colorPrimary">#03a9f4</item>
+        <item name="colorPrimaryDark">#007ac1</item>
+        <item name="colorAccent">#424242</item>
+    </style>
+
+    <style name="AppTheme.Teal">
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryDark">#00675b</item>
+        <item name="colorAccent">#ec407a</item>
+    </style>
+
+    <style name="AppTheme.Purple">
+        <item name="colorPrimary">#7b1fa2</item>
+        <item name="colorPrimaryDark">#4a0072</item>
+        <item name="colorAccent">#43a047</item>
+    </style>
+
+    <style name="AppTheme.Classic">
+        <item name="colorPrimary">#303f9f</item>
+        <item name="colorPrimaryDark">#1a237e</item>
+        <item name="colorAccent">#b71c1c</item>
+    </style>
+
+    <style name="AppThemeDark.Classic">
+        <item name="colorPrimary">#303f9f</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#ef5350</item>
+    </style>
+
+    <style name="AppThemeDark.Teal">
+        <item name="colorPrimary">#009688</item>
+        <item name="colorPrimaryDark">#00675b</item>
+        <item name="colorAccent">#ec407a</item>
+    </style>
+
+    <style name="AppThemeDark.Blue">
+        <item name="colorPrimary">#03a9f4</item>
+        <item name="colorPrimaryDark">#007ac1</item>
+        <item name="colorAccent">#424242</item>
+    </style>
+
+    <style name="AppThemeBlack.Grey">
+        <item name="colorPrimary">#546e7a</item>
+        <item name="colorPrimaryDark">#29434e</item>
+        <item name="colorAccent">#d32f2f</item>
+    </style>
+
+    <style name="AppThemeBlack.Black">
+        <item name="colorPrimary">#263238</item>
+        <item name="colorPrimaryDark">#000a12</item>
+        <item name="colorAccent">#00838f</item>
+    </style>
+
+    <style name="AppThemeBlack.Red">
+        <item name="colorPrimary">#d32f2f</item>
+        <item name="colorPrimaryDark">#d32f2f</item>
+        <item name="colorAccent">#ffca28</item>
+    </style>
+
+    <style name="AppTheme.Ambiance">
+        <item name="colorPrimary">#424242</item>
+        <item name="colorPrimaryDark">#212121</item>
+        <item name="colorAccent">#ff5722</item>
+    </style>
+
+    <style name="AppThemeDark.Miku">
+        <item name="colorPrimary">#212121</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorAccent">#00acc1</item>
+        <item name="android:windowBackground">@color/blue_grey_900</item>
+    </style>
+
+    <style name="AppTheme.Indigo">
+        <item name="colorPrimary">#5c6bc0</item>
+        <item name="colorPrimaryDark">#26418f</item>
+        <item name="colorAccent">#f57f17</item>
+    </style>
+
+    <style name="FullScreenDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowAnimationStyle">@style/AlphaTransition</item>
+    </style>
+
+    <style name="listItem">
+        <item name="android:paddingLeft">?android:listPreferredItemPaddingLeft</item>
+        <item name="android:paddingRight">?android:listPreferredItemPaddingRight</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="android:minHeight">?android:listPreferredItemHeightSmall</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">@dimen/bottomsheet_peek_height</item>
+    </style>
+
+    <style name="AlphaTransition">
+        <item name="android:windowEnterAnimation">@anim/alpha_show</item>
+        <item name="android:windowExitAnimation">@anim/alpha_hide</item>
+    </style>
+</resources>

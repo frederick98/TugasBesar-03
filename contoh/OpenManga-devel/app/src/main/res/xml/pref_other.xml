@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/storage_settings">
+
+        <Preference
+            android:key="mangadir"
+            android:title="@string/manga_local_dir" />
+
+        <Preference
+            android:key="movemanga"
+            android:title="@string/move_saved" />
+
+        <Preference
+            android:key="backup"
+            android:title="@string/backup" />
+
+        <Preference
+            android:key="restore"
+            android:title="@string/restore" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/network_settings">
+
+        <org.nv95.openmanga.components.IntSelectPreference
+            android:defaultValue="2"
+            android:key="save_threads"
+            android:title="@string/download_max_threads"
+            app:maxValue="4"
+            app:minValue="1" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="save.wifionly"
+            android:title="@string/download_wifi_only"
+            android:widgetLayout="@layout/pref_switchcompat" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/system">
+
+        <org.nv95.openmanga.components.PickerPreference
+            android:defaultValue="100"
+            android:key="cache_max"
+            android:title="@string/max_cache_size"
+            app:maxValue="1024"
+            app:minValue="20" />
+
+        <Preference
+            android:key="ccache"
+            android:title="@string/action_clear_cache" />
+
+        <Preference
+            android:key="csearchhist"
+            android:title="@string/action_clear_search_hist" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_help"
+        android:title="@string/help">
+
+        <Preference
+            android:key="update"
+            android:title="@string/check_updates" />
+
+        <Preference
+            android:key="bugreport"
+            android:summary="@string/bug_report_summ"
+            android:title="@string/bug_report" />
+
+        <Preference
+            android:key="about"
+            android:title="@string/about" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

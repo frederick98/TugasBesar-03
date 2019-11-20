@@ -13,5 +13,4 @@
         android:id="@+id/grid_view"
         android:numColumns="2"
     />
-
 </LinearLayout>

@@ -9,3 +9,13 @@ https://github.com/codepath/android_guides/wiki/Must-Have-libraries
 https://www.mangaeden.com/api/list/0/?p=10&l=2
 
 https://github.com/MagicMicky/FreemiumLibrary/wiki/Import-the-library-in-Android-Studio
+
+https://stackoverflow.com/questions/44493378/whats-the-difference-between-implementation-and-compile-in-gradle
+
+https://github.com/ramt57/MangaTrend
+
+https://github.com/nv95/OpenManga
+
+https://www.youtube.com/watch?v=8VX3f4AWUoI
+
+https://github.com/MiguelCatalan/MaterialSearchView

@@ -1,0 +1,128 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+// apply from: "${rootProject.rootDir}/scripts/version.gradle" produce troubles with f-droid
+apply from: "${rootProject.rootDir}/scripts/sign.gradle"
+
+// version of app
+// see app/version.properties
+//def versionProps = rootProject.ext.getVersionProps()
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "org.nv95.openmanga"
+        minSdkVersion 14
+        targetSdkVersion 29
+        versionCode 51340 // version.properties
+        versionName '4.8' // version.properties
+        buildConfigField "boolean", "SELFUPDATE_ENABLED", "true"
+        buildConfigField "String", "SELFUPDATE_URL", "\"http://anibreak.ru/v.0.3/get/openmanga/version\""
+        buildConfigField "String", "SYNC_URL", "\"http://openmanga.pythonanywhere.com/api/v1\""
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("debug.jks")
+            storePassword "develop"
+            keyAlias "develop"
+            keyPassword "develop"
+        }
+        release {
+            storeFile file(signingConfigsRelease.signStoreFile)
+            storePassword signingConfigsRelease.signStorePassword
+            keyAlias signingConfigsRelease.signKeyAlias
+            keyPassword signingConfigsRelease.signKeyPassword
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        beta {
+            applicationIdSuffix ".beta"
+            versionNameSuffix " - beta"
+            minifyEnabled true
+            shrinkResources true
+            debuggable true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix " - debug"
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+
+            def nameSuff = variant.buildType.versionNameSuffix == null ? variant.versionName
+                    : variant.versionName.replace(variant.buildType.versionNameSuffix, "")
+
+            output.outputFileName = "openmanga-${variant.name}-${nameSuff}.apk"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        disable 'MissingTranslation'
+        abortOnError false
+    }
+}
+
+def work_version = "2.0.1" //TODO upgrade
+
+dependencies {
+
+    // androidx
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.exifinterface:exifinterface:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+
+    // worker
+    implementation "androidx.work:work-runtime-ktx:$work_version"
+
+    // kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1'
+
+    // Koin
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    // libs
+    implementation 'org.jsoup:jsoup:1.12.1'
+    implementation 'com.davemorrissey.labs:subsampling-scale-image-view:3.10.0'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.12.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    //noinspection GradleDependency
+    implementation 'com.squareup.okhttp3:okhttp:3.12.3'
+    implementation 'com.itkacher.okhttpprofiler:okhttpprofiler:1.0.5'
+}
+
+repositories {
+    mavenCentral()
+}
