@@ -18,4 +18,4 @@ https://github.com/nv95/OpenManga
 
 https://www.youtube.com/watch?v=8VX3f4AWUoI
 
-https://github.com/MiguelCatalan/MaterialSearchView
+http://miguelcatalan.info/2015/09/23/MaterialSearchView/
