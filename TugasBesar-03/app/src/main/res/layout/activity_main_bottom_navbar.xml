@@ -13,52 +13,52 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/previous"
+            android:id="@+id/ambn_ll_previous"
             android:layout_width="200dp"
             android:layout_height="match_parent"
             android:clickable="true">
 
             <ImageView
-                android:id="@+id/iv_prev"
+                android:id="@+id/ambn_iv_previous"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
                 android:src="@drawable/pic_btn_prev"
-                android:background="@android:color/transparent"
-                android:layout_gravity="center_vertical"/>
+                android:background="@android:color/transparent"/>
 
             <TextView
                 android:layout_width="139dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Previous Page"
+                android:text="@string/ambn_tv_previous"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAlignment="center" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/next"
+            android:id="@+id/ambn_ll_next"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:clickable="true">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/ambn_tv_next"
                 android:layout_width="139dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="Next Page"
+                android:text="@string/ambn_tv_next"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAlignment="center"/>
 
             <ImageView
-                android:id="@+id/iv_next"
+                android:id="@+id/ambn_iv_next"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
-                android:background="@android:color/transparent"
-                android:src="@drawable/pic_btn_next" />
+                android:src="@drawable/pic_btn_next"
+                android:background="@android:color/transparent" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

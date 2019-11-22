@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/amd_cl_mangaDetail_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_margin="9dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="#ffffff">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:background="#ffffff"
+            app:contentScrim="#292929"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginBottom="12dp"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.6">
+
+                <TextView
+                    android:id="@+id/amd_tv_judul_manga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="19sp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/amd_tv_judul_manga"
+                    android:textColor="#000000"
+                    android:textStyle="bold"/>
+                <ImageView
+                    android:id="@+id/amd_iv_gambar_manga"
+                    android:layout_below="@id/amd_tv_judul_manga"
+                    android:layout_width="154dp"
+                    android:layout_height="220dp"
+                    android:scaleType="centerCrop"/>
+
+                <LinearLayout
+                    android:id="@+id/amd_ll_description"
+                    android:layout_below="@id/amd_iv_gambar_manga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="@string/amd_tv_description"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/amd_tv_description_manga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/amd_ll_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginRight="7dp"
+                    android:layout_below="@id/amd_tv_judul_manga"
+                    android:layout_toEndOf="@+id/amd_iv_gambar_manga"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/amd_tv_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/amd_tv_category"
+                        android:textColor="#000000"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/amd_tv_category_manga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="2dp"
+                        android:textSize="12sp"
+                        android:textColor="#000000"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/amd_tv_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginStart="7dp"
+                    android:layout_marginLeft="7dp"
+                    android:layout_toRightOf="@+id/amd_iv_gambar_manga"
+                    android:layout_below="@+id/amd_ll_category"
+                    android:text="@string/amd_tv_info"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/amd_iv_gambar_manga"
+                    android:layout_toRightOf="@+id/amd_iv_gambar_manga"
+                    android:layout_below="@+id/amd_tv_info"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginStart="7dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/amd_tv_author_manga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/amd_tv_author_manga"
+                        android:textSize="12sp"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:id="@+id/amd_tv_artist_manga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/amd_tv_artist_manga"
+                        android:textSize="12sp"
+                        android:textColor="#000000"/>
+                    <TextView
+                        android:id="@+id/amd_tv_released_manga"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/amd_tv_released_manga"
+                        android:textSize="12sp"
+                        android:textColor="#000000"/>
+                    <!--
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#000000"/>
+                    -->
+                </LinearLayout>
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <TextView
+            android:id="@+id/amd_tv_chapter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/amd_tv_chapter"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="23sp"
+            app:layout_collapseMode="pin"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/amd_rv_chapterList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="?actionBarSize"
+        android:background="#ffffff"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

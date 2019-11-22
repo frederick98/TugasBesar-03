@@ -33,6 +33,7 @@ public class MangaViewer extends FragmentActivity  implements PagerAdapter.fragm
     RecyclerView listView;
     String url = "https://www.mangaeden.com/api/chapter/";
     ListViewAdapter listViewAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

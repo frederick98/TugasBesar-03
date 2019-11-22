@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+/*
 class MainAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater inflater;
@@ -52,3 +53,6 @@ class MainAdapter extends BaseAdapter {
         return convertView;
     }
 }
+
+
+ */
