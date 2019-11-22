@@ -23,5 +23,10 @@
     <!-- activity_main_bottom_navbar layout usage -->
     <string name="ambn_tv_previous">Previous Page</string>
     <string name="ambn_tv_next">Next Page</string>
+
+    <!-- page_list_item layout usage -->
     <string name="pli_tv_page">1</string>
+
+    <!-- manga_list_item layout usage -->
+    <string name="mli_tv_mangaTitle">Judul Manga</string>
 </resources>

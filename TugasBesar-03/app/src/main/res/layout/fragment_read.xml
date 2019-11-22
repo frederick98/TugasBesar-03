@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- tools:context="manga.com.infotrench.ramt57.mangajump.PageFragment"> -->
+
+    <!-- TODO: Update blank fragment layout -->
+    <it.sephiroth.android.library.imagezoom.ImageViewTouch
+        android:id="@+id/fr_ivt_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"/>
+
+    <ProgressBar
+        android:id="@+id/fr_pb_page"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        style="@android:style/Widget.Material.Light.ProgressBar"/>
+
+</FrameLayout>

@@ -24,6 +24,10 @@ public class Adapter_Page extends RecyclerView.Adapter<Adapter_Page.MyViewHolder
         this.mangaURL = image;
     }
 
+    public void setPageListener(PageSelector selector){
+        listener = selector;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
