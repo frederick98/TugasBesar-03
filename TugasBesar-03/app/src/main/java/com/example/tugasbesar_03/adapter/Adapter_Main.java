@@ -2,6 +2,7 @@ package com.example.tugasbesar_03.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -34,7 +35,10 @@ public class Adapter_Main extends RecyclerView.Adapter<Adapter_Main.MainVH>{
     @NonNull
     @Override
     public MainVH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.manga_list_item, parent, false);
+        MainVH holder = new MainVH(view);
+        context = view.getContext();
+        return holder;
     }
 
     @Override

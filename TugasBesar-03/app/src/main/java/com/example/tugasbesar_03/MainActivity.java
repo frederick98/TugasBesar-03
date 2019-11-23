@@ -51,10 +51,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
+    @NonNull
     protected String BASE_URL = "https://www.mangaeden.com/api/list/0/";
     protected ArrayList<Manga_List> mangaList = new ArrayList<>();
+    @NonNull
     protected ArrayList<Manga_List> mangaCategory = new ArrayList<>();
     protected static ArrayList<Manga_List> mangaList2 = new ArrayList<>();
+    @NonNull
     protected static ArrayList<Manga_Search> mangaSearch = new ArrayList<>();
 
     protected Adapter_Main mainAdapter;
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
+            public boolean onQueryTextChange(@NonNull String newText) {
                 //search manga here
 
                 if (newText.length() > 2) {
@@ -228,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @NonNull Intent data) {
         if (requestCode == MaterialSearchView.REQUEST_VOICE && resultCode == RESULT_OK) {
             ArrayList<String> matches = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
             if (matches != null && matches.size() > 0) {
@@ -419,7 +422,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     /*
      * method ini untuk sort si array lalu dimasukkan ke MaterialSearchView
      */
-    private void sortMangaList(List<String> list){
+    private void sortMangaList(@NonNull List<String> list){
         String[] sorted = new String[list.size()];
 
         sorted = list.toArray(sorted);
@@ -431,7 +434,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 (Request.Method.GET, BASE_URL + "?p=" + i, null, new Response.Listener<JSONObject>() {
 
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(@NonNull JSONObject response) {
                         if(i == 0){
                             if(previousButton.getVisibility()==View.VISIBLE){
                                 previousButton.setVisibility(View.GONE);
@@ -469,7 +472,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 }, new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
+                    public void onErrorResponse(@NonNull VolleyError error) {
                         // TODO Auto-generated method stub
                         View view = findViewById(R.id.am_cl_main);
                         Log.d("TAG",error.toString());
@@ -510,7 +513,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 (Request.Method.GET, BASE_URL, null, new Response.Listener<JSONObject>() {
 
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(@NonNull JSONObject response) {
                         InputStream inputStream=new ByteArrayInputStream(response.toString().getBytes());
                         try {
                             Reader streamReader=new InputStreamReader(inputStream,"UTF-8");
@@ -562,7 +565,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 }, new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
+                    public void onErrorResponse(@NonNull VolleyError error) {
                         // TODO Auto-generated method stub
                         Log.d("TAG1",error.toString());
                         Toast.makeText(MainActivity.this, "error " + error.getMessage(), Toast.LENGTH_SHORT).show();
