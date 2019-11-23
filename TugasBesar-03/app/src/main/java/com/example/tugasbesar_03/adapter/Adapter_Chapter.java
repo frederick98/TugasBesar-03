@@ -13,6 +13,7 @@ import com.example.tugasbesar_03.R;
 import java.util.ArrayList;
 
 public class Adapter_Chapter extends RecyclerView.Adapter<Adapter_Chapter.ChapterVH> {
+
     public static ArrayList<String> chapterList;
     protected static ViewChapter listener;
     protected Context context;

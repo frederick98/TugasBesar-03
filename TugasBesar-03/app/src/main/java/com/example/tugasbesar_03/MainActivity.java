@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // inisialisasi method search supaya standby dulu
         searchVolleyRequest();
 
-        recyclerView = findViewById(R.id.fm_rv_mangaList);
+        recyclerView = findViewById(R.id.am_rv_allManga);
 
         // inisialisasi ProgressDialog
         progressDialog = new ProgressDialog(this);
