@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.tugasbesar_03.MangaDetailActivity;
 import com.example.tugasbesar_03.R;
 import com.example.tugasbesar_03.mangaModel.Manga_Chapter_Detail;
 import com.example.tugasbesar_03.mangaModel.Manga_List;
@@ -69,7 +70,7 @@ public class Adapter_Main extends RecyclerView.Adapter<Adapter_Main.MainVH>{
             mangaView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(view.getContext(), Manga_Chapter_Detail.class);
+                    Intent intent = new Intent(view.getContext(), MangaDetailActivity.class);
                     intent.putExtra("ID", mangaList.get(getAdapterPosition()).getId());
                     view.getContext().startActivity(intent);
                 }
