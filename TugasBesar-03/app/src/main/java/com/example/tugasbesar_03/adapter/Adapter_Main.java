@@ -15,7 +15,6 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.tugasbesar_03.MangaDetailActivity;
 import com.example.tugasbesar_03.R;
-import com.example.tugasbesar_03.mangaModel.Manga_Chapter_Detail;
 import com.example.tugasbesar_03.mangaModel.Manga_List;
 
 import java.util.ArrayList;

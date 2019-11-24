@@ -96,7 +96,7 @@ public class MangaDetailActivity extends AppCompatActivity implements ViewChapte
                     }
                 });
 
-        // Create the AlertDialog object and return it
+        // bikin objek AlertDialog trus dishow
         AlertDialog dialog = builder.create();
         dialog.show();
     }
@@ -117,13 +117,10 @@ public class MangaDetailActivity extends AppCompatActivity implements ViewChapte
                         Gson gson = new Gson();
                         Manga_Chapter_Detail chapterDetail = new Manga_Chapter_Detail();
                         chapterDetail = gson.fromJson(response.toString(), Manga_Chapter_Detail.class);
-                        /*
                         Glide.with(getApplicationContext()).load("https://cdn.mangaeden.com/mangasimg/" + chapterDetail.getMangaPicture())
                                 .apply(new RequestOptions()
-                                        .override(154,250).centerCrop().placeholder(R.drawable.placeholder).error(R.drawable.error))
+                                        .override(154,250).centerCrop().placeholder(R.drawable.pic_image_placeholder).error(R.drawable.pic_image_null))
                                 .into(ivManga);
-                                
-                         */
 
                         // TextView setText
                         tvTitle.setText(chapterDetail.getMangaTitle());

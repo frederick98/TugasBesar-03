@@ -79,7 +79,7 @@ public class MangaReader extends FragmentActivity implements FragmentListener {
                 pageAdapter.setPageListener(new PageSelector() {
                     @Override
                     public void selectPage(int position) {
-
+                        imageZoom.setCurrentItem(position);
                     }
                 });
                 mangaAdapter.notifyDataSetChanged();
@@ -103,11 +103,11 @@ public class MangaReader extends FragmentActivity implements FragmentListener {
         Animation bottomDown = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.pagelist_down);
         if (view_bottom.getVisibility() == View.VISIBLE) {
-            //hide it
+            // layoutnya dihide
             view_bottom.startAnimation(bottomDown);
             view_bottom.setVisibility(View.INVISIBLE);
         } else {
-            //show it
+            // layoutnya dishow
             view_bottom.startAnimation(bottomUp);
             view_bottom.setVisibility(View.VISIBLE);
         }

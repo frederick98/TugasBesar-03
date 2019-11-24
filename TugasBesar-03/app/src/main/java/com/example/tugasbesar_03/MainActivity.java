@@ -51,13 +51,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
-    @NonNull
     protected String BASE_URL = "https://www.mangaeden.com/api/list/0/";
+
     protected ArrayList<Manga_List> mangaList = new ArrayList<>();
-    @NonNull
     protected ArrayList<Manga_List> mangaCategory = new ArrayList<>();
     protected static ArrayList<Manga_List> mangaList2 = new ArrayList<>();
-    @NonNull
     protected static ArrayList<Manga_Search> mangaSearch = new ArrayList<>();
 
     protected Adapter_Main mainAdapter;
@@ -80,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // findViewById()
+        drawerLayout = findViewById(R.id.am_dl);
+
         // inisilisasi toolbar lalu setSupportActionBar() untuk si toolbarnya biar ga null
         toolbar = findViewById(R.id.am_tb_menu);
         setSupportActionBar(toolbar);
@@ -96,11 +97,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // inisialisasi method volleyRequest() supaya standby dulu
         volleyRequest(0);
 
-
         // mulai retrieve manga dari server
         progressDialog.setMessage("Please Wait while manga is retrieved");
         progressDialog.show();
-        categoryPreferences = getSharedPreferences("Category", MODE_PRIVATE);
+        categoryPreferences = getSharedPreferences("CATEGORY", MODE_PRIVATE);
         searchEditor = categoryPreferences.edit();
 
         final List<String> mangaList3 = new ArrayList<String>();
@@ -209,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.am_nv);
         navigationView.setNavigationItemSelectedListener(this);
         try{
-            navigationView.getMenu().getItem(categoryPreferences.getInt("ID",0)).setChecked(true);
+            navigationView.getMenu().getItem(categoryPreferences.getInt("ID", 0)).setChecked(true);
         }
         catch (Exception e){
             try {
@@ -306,111 +306,51 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 searchEditor.apply();
                 showcategoryData();
                 break;
-            case R.id.fantasy:
-                searchEditor.putString("CAT","Fantasy");
-                searchEditor.putInt("ID",6);
-                searchEditor.apply();
-                showcategoryData();
-                break;
             case R.id.mature:
                 searchEditor.putString("CAT","Mature");
-                searchEditor.putInt("ID",7);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.mystery:
-                searchEditor.putString("CAT","Mystery");
-                searchEditor.putInt("ID",8);
+                searchEditor.putInt("ID",6);
                 searchEditor.apply();
                 showcategoryData();
                 break;
             case R.id.school:
                 searchEditor.putString("CAT","School Life");
-                searchEditor.putInt("ID",9);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.shounen:
-                searchEditor.putString("CAT","Shounen");
-                searchEditor.putInt("ID",10);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.seinen:
-                searchEditor.putString("CAT","Seinen");
-                searchEditor.putInt("ID",11);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.smut:
-                searchEditor.putString("CAT","Smut");
-                searchEditor.putInt("ID",12);
+                searchEditor.putInt("ID",7);
                 searchEditor.apply();
                 showcategoryData();
                 break;
             case R.id.supernatural:
                 searchEditor.putString("CAT","Supernatural");
-                searchEditor.putInt("ID",13);
+                searchEditor.putInt("ID",8);
                 searchEditor.apply();
                 showcategoryData();
                 break;
             case R.id.yuri:
                 searchEditor.putString("CAT","Yuri");
-                searchEditor.putInt("ID",15);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.josei:
-                searchEditor.putString("CAT","Josei");
-                searchEditor.putInt("ID",16);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.historical:
-                searchEditor.putString("CAT","Historical");
-                searchEditor.putInt("ID",17);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.martial_arts:
-                searchEditor.putString("CAT","Martial Arts");
-                searchEditor.putInt("ID",18);
+                searchEditor.putInt("ID",9);
                 searchEditor.apply();
                 showcategoryData();
                 break;
             case R.id.romance:
                 searchEditor.putString("CAT","Romance");
-                searchEditor.putInt("ID",20);
+                searchEditor.putInt("ID",10);
                 searchEditor.apply();
                 showcategoryData();
                 break;
             case R.id.sci:
                 searchEditor.putString("CAT","Sci-fi");
-                searchEditor.putInt("ID",21);
+                searchEditor.putInt("ID",11);
                 searchEditor.apply();
                 showcategoryData();
                 break;
             case R.id.sports:
                 searchEditor.putString("CAT","Sports");
-                searchEditor.putInt("ID",22);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.tragedy:
-                searchEditor.putString("CAT","Tragedy");
-                searchEditor.putInt("ID",23);
-                searchEditor.apply();
-                showcategoryData();
-                break;
-            case R.id.yaoi:
-                searchEditor.putString("CAT","Yaoi");
-                searchEditor.putInt("ID",24);
+                searchEditor.putInt("ID",12);
                 searchEditor.apply();
                 showcategoryData();
                 break;
             default:
                 searchEditor.putString("CAT","All");
-                searchEditor.putInt("ID",25);
+                searchEditor.putInt("ID",13);
                 searchEditor.apply();
                 showcategoryData();
                 break;
@@ -424,7 +364,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
      */
     private void sortMangaList(@NonNull List<String> list){
         String[] sorted = new String[list.size()];
-
         sorted = list.toArray(sorted);
         searchView.setSuggestions(sorted);
     }
