@@ -65,7 +65,7 @@ public class MangaReader extends FragmentActivity implements FragmentListener {
             public void onResponse(String response) {
                 Gson gson = new Gson();
                 Manga_Picture picture = gson.fromJson(response.toString(), Manga_Picture.class);
-                for (Object object : picture.getPicture()) {
+                for (Object object : picture.getImages()) {
                     String word = object.toString().replace("[", "");
                     word = word.replace("]", "");
                     String[] link = word.split(",");

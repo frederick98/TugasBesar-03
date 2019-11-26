@@ -43,8 +43,8 @@ public class Adapter_Main extends RecyclerView.Adapter<Adapter_Main.MainVH>{
 
     @Override
     public void onBindViewHolder(@NonNull MainVH holder, int position) {
-        holder.tvMangaName.setText(mangaList.get(position).getTitle());
-        Glide.with(context).load(BASE_URL + mangaList.get(position).getIMAGE_URL())
+        holder.tvMangaName.setText(mangaList.get(position).getT());
+        Glide.with(context).load(BASE_URL + mangaList.get(position).getIm())
                 .apply(new RequestOptions().override(200,150).centerCrop().placeholder(R.drawable.pic_image_placeholder).error(R.drawable.pic_image_null))
                 .into(holder.ivMangaPic);
     }
@@ -70,7 +70,7 @@ public class Adapter_Main extends RecyclerView.Adapter<Adapter_Main.MainVH>{
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(view.getContext(), MangaDetailActivity.class);
-                    intent.putExtra("ID", mangaList.get(getAdapterPosition()).getId());
+                    intent.putExtra("ID", mangaList.get(getAdapterPosition()).getI());
                     view.getContext().startActivity(intent);
                 }
             });

@@ -2,18 +2,18 @@ package com.example.tugasbesar_03.mangaModel;
 
 import java.util.ArrayList;
 
+/*
+    kelas ini memodelkan API yang akan diterima oleh WebService Mangaeden, sehingga SETIAP ATRIBUT
+    yang dibuat harus sesuai dengan WebService Mangaeden, kalau tidak akan null
+ */
 public class Manga_Picture {
-    protected ArrayList<ArrayList<Object>> picture;
+    protected ArrayList<ArrayList<Object>> images;       // atribut ini untuk load seluruh isi (gambar) dari manga berdasarkan chapternya
 
-    public Manga_Picture(){
-
+    public ArrayList<ArrayList<Object>> getImages() {
+        return images;
     }
 
-    public ArrayList<ArrayList<Object>> getPicture() {
-        return picture;
-    }
-
-    public void setPicture(ArrayList<ArrayList<Object>> picture) {
-        this.picture = picture;
+    public void setImages(ArrayList<ArrayList<Object>> images) {
+        this.images = images;
     }
 }

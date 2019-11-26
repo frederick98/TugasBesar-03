@@ -56,12 +56,9 @@ public class Adapter_Chapter extends RecyclerView.Adapter<Adapter_Chapter.Chapte
                 @Override
                 public void onClick(View view) {
                     Adapter_Chapter.listener.getChapter(getAdapterPosition());
-
                 }
             });
-
         }
-
     }
 }
 

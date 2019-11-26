@@ -117,27 +117,27 @@ public class MangaDetailActivity extends AppCompatActivity implements ViewChapte
                         Gson gson = new Gson();
                         Manga_Chapter_Detail chapterDetail = new Manga_Chapter_Detail();
                         chapterDetail = gson.fromJson(response.toString(), Manga_Chapter_Detail.class);
-                        Glide.with(getApplicationContext()).load("https://cdn.mangaeden.com/mangasimg/" + chapterDetail.getMangaPicture())
+                        Glide.with(getApplicationContext()).load("https://cdn.mangaeden.com/mangasimg/" + chapterDetail.getImage())
                                 .apply(new RequestOptions()
                                         .override(154,250).centerCrop().placeholder(R.drawable.pic_image_placeholder).error(R.drawable.pic_image_null))
                                 .into(ivManga);
 
                         // TextView setText
-                        tvTitle.setText(chapterDetail.getMangaTitle());
-                        tvChapter.setText(chapterDetail.getChapterLength() + " chapter");
-                        tvAuthor.setText("Author: " + chapterDetail.getMangaAuthor());
-                        tvArtist.setText("Artist: " + chapterDetail.getMangaArtist());
-                        tvReleased.setText("Released: " + chapterDetail.getMangaTimeReleased());
-                        tvDescription.setText(chapterDetail.getMangaDescription());
+                        tvTitle.setText(chapterDetail.getTitle());
+                        tvChapter.setText(chapterDetail.getChapters_len() + " chapter");
+                        tvAuthor.setText("Author: " + chapterDetail.getAuthor());
+                        tvArtist.setText("Artist: " + chapterDetail.getArtist());
+                        tvReleased.setText("Released: " + chapterDetail.getReleased());
+                        tvDescription.setText(chapterDetail.getDescription());
 
                         // StringBuffer untuk get categories nya, lalu set ke TextView tvGenre
                         StringBuffer stringBuffer = new StringBuffer();
-                        for (String category : chapterDetail.getMangaCategories()) {
+                        for (String category : chapterDetail.getCategories()) {
                             stringBuffer.append(category + " | ");
                         }
                         tvGenre.setText(stringBuffer.toString());
                         
-                        Object ov[] = chapterDetail.getMangaChapter().toArray();
+                        Object ov[] = chapterDetail.getChapters().toArray();
                         for (Object d : ov) {
                             Log.d("URL", d.toString() + 'd');
                             String red = d.toString().replace("[", "");
@@ -152,7 +152,6 @@ public class MangaDetailActivity extends AppCompatActivity implements ViewChapte
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
                         loading.dismiss();
                     }
                 });

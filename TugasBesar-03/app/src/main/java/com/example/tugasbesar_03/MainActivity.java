@@ -436,7 +436,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else{
             ArrayList<Manga_List> news = new ArrayList<>();
             for (Manga_List list:mangaList){
-                for(String s : list.getCategory()){
+                for(String s : list.getC()){
                     if(s.equals(category)){
                         news.add(list);
                     }

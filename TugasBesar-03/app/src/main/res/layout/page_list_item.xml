@@ -15,5 +15,4 @@
         android:textSize="40sp"
         android:textColor="#663566"
         android:textAlignment="center"/>
-
 </LinearLayout>

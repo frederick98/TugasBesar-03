@@ -81,6 +81,5 @@ public class ReadingFragment extends Fragment {
             return true;
         }
     }
-
 }
 

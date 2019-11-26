@@ -2,81 +2,81 @@ package com.example.tugasbesar_03.mangaModel;
 
 import java.util.ArrayList;
 
+/*
+    kelas ini memodelkan API yang akan diterima oleh WebService Mangaeden, sehingga SETIAP ATRIBUT
+    yang dibuat harus sesuai dengan WebService Mangaeden, kalau tidak akan null
+ */
 public class Manga_List {
-    protected String IMAGE_URL;
-    protected String title;
-    protected String id;
-    protected String alias;
-    protected String status;
-    protected ArrayList<String> category;
-    protected String lastChapterDate;
-    protected String hits;
+    protected String im;            // Manga's Image
+    protected String t;             // Manga's Title
+    protected String i;             // Manga's ID
+    protected String a;             // Manga's Alias
+    protected String s;             // Manga's Status
+    protected ArrayList<String> c;  // Manga's Category
+    protected String ld;            // Manga's Last Chapter Update
+    protected String h;             // Manga's Hits
 
-    public Manga_List(){
-
+    public String getIm() {
+        return im;
     }
 
-    public String getIMAGE_URL() {
-        return IMAGE_URL;
+    public void setIm(String im) {
+        this.im = im;
     }
 
-    public void setIMAGE_URL(String IMAGE_URL) {
-        this.IMAGE_URL = IMAGE_URL;
+    public String getT() {
+        return t;
     }
 
-    public String getTitle() {
-        return title;
+    public void setT(String t) {
+        this.t = t;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getI() {
+        return i;
     }
 
-    public String getId() {
-        return id;
+    public void setI(String i) {
+        this.i = i;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getA() {
+        return a;
     }
 
-    public String getAlias() {
-        return alias;
+    public void setA(String a) {
+        this.a = a;
     }
 
-    public void setAlias(String alias) {
-        this.alias = alias;
+    public String getS() {
+        return s;
     }
 
-    public String getStatus() {
-        return status;
+    public void setS(String s) {
+        this.s = s;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public ArrayList<String> getC() {
+        return c;
     }
 
-    public void setCategory(ArrayList<String> category) {
-        this.category = category;
+    public void setC(ArrayList<String> c) {
+        this.c = c;
     }
 
-    public ArrayList<String> getCategory() {
-        return category;
+    public String getLd() {
+        return ld;
     }
 
-    public void setLastChapterDate(String lastChapterDate) {
-        this.lastChapterDate = lastChapterDate;
+    public void setLd(String ld) {
+        this.ld = ld;
     }
 
-    public String getLastChapterDate() {
-        return lastChapterDate;
+    public String getH() {
+        return h;
     }
 
-    public void setHits(String hits) {
-        this.hits = hits;
-    }
-
-    public String getHits() {
-        return hits;
+    public void setH(String h) {
+        this.h = h;
     }
 }

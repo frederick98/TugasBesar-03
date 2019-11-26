@@ -8,13 +8,23 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        >
+
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
         android:layout_margin="9dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:background="#ffffff">
+        android:background="#ffffff"
+        >
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsingToolbar1"
@@ -152,14 +162,6 @@
                         android:text="@string/amd_tv_released_manga"
                         android:textSize="12sp"
                         android:textColor="#000000"/>
-                    <!--
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:textColor="#000000"/>
-                    -->
                 </LinearLayout>
 
             </RelativeLayout>
@@ -188,4 +190,6 @@
         android:background="#ffffff"
         android:clipToPadding="false"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

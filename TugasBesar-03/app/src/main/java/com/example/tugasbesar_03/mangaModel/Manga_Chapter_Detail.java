@@ -2,98 +2,100 @@ package com.example.tugasbesar_03.mangaModel;
 
 import java.util.ArrayList;
 
+/*
+    kelas ini mengimplementasikan detil manga yang nanti dipanggil ke WebService Mangaeden, sehingga
+    SETIAP ATRIBUT yang dibuat harus sesuai dengan WebService Mangaeden, kalau tidak akan null
+ */
 public class Manga_Chapter_Detail {
-    protected String mangaTitle;
-    protected int chapterLength;
-    protected ArrayList<String> mangaCategories;
-    protected String mangaAuthor;
-    protected String mangaArtist;
-    protected String mangaPicture;
-    protected String mangaDescription;
-    protected int mangaTimeReleased;
-    protected double mangaLastChapterAddedDate;
-    protected ArrayList<Object> mangaChapter;
+    protected String title;                     // buat title si manga nya
+    protected int chapters_len;                 // buat panjang chapter manga nya
+    protected ArrayList<String> categories;     // buat jenis kategori manga nya
+    protected String author;                    // buat author manga nya
+    protected String artist;                    // buat artist manga nya
+    protected String image;                     // buat gambar manga nya
+    protected String description;               // buat deskripsi manga nya
+    protected int released;                     // buat kapan manga tsb dirilis
+    protected double last_chapter_date;         // buat liat kapan terakhir chapter dirilis
+    protected ArrayList<Object> chapters;       // buat list daftar chapter yg dimiliki si manga
 
-    public Manga_Chapter_Detail() {
+    public String getTitle() {
+        return title;
     }
 
-    public String getMangaTitle() {
-        return mangaTitle;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setMangaTitle(String mangaTitle) {
-        this.mangaTitle = mangaTitle;
+    public int getChapters_len() {
+        return chapters_len;
     }
 
-    public int getChapterLength() {
-        return chapterLength;
+    public void setChapters_len(int chapters_len) {
+        this.chapters_len = chapters_len;
     }
 
-    public void setChapterLength(int chapterLength) {
-        this.chapterLength = chapterLength;
+    public ArrayList<String> getCategories() {
+        return categories;
     }
 
-    public ArrayList<String> getMangaCategories() {
-        return mangaCategories;
+    public void setCategories(ArrayList<String> categories) {
+        this.categories = categories;
     }
 
-    public void setMangaCategories(ArrayList<String> mangaCategories) {
-        this.mangaCategories = mangaCategories;
+    public String getAuthor() {
+        return author;
     }
 
-    public String getMangaAuthor() {
-        return mangaAuthor;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-    public void setMangaAuthor(String mangaAuthor) {
-        this.mangaAuthor = mangaAuthor;
+    public String getArtist() {
+        return artist;
     }
 
-    public String getMangaArtist() {
-        return mangaArtist;
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
-    public void setMangaArtist(String mangaArtist) {
-        this.mangaArtist = mangaArtist;
+
+    public String getImage() {
+        return image;
     }
 
-    public String getMangaPicture() {
-        return mangaPicture;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public void setMangaPicture(String mangaPicture) {
-        this.mangaPicture = mangaPicture;
+    public String getDescription() {
+        return description;
     }
 
-    public String getMangaDescription() {
-        return mangaDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setMangaDescription(String mangaDescription) {
-        this.mangaDescription = mangaDescription;
+    public int getReleased() {
+        return released;
     }
 
-    public int getMangaTimeReleased() {
-        return mangaTimeReleased;
+    public void setReleased(int released) {
+        this.released = released;
     }
 
-    public void setMangaTimeReleased(int mangaTimeReleased) {
-        this.mangaTimeReleased = mangaTimeReleased;
+    public double getLast_chapter_date() {
+        return last_chapter_date;
     }
 
-    public double getMangaLastChapterAddedDate() {
-        return mangaLastChapterAddedDate;
+    public void setLast_chapter_date(double last_chapter_date) {
+        this.last_chapter_date = last_chapter_date;
     }
 
-    public void setMangaLastChapterAddedDate(double mangaLastChapterAddedDate) {
-        this.mangaLastChapterAddedDate = mangaLastChapterAddedDate;
+    public ArrayList<Object> getChapters() {
+        return chapters;
     }
 
-    public ArrayList<Object> getMangaChapter() {
-        return mangaChapter;
-    }
-
-    public void setMangaChapter(ArrayList<Object> mangaChapter) {
-        this.mangaChapter = mangaChapter;
+    public void setChapters(ArrayList<Object> chapters) {
+        this.chapters = chapters;
     }
 }
